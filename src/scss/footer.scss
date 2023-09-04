@@ -1,3 +1,52 @@
 //====================================================================================================
+.footer {
+    background-color: $pinkColor;
+    clip-path: url(#clip-path-footer);
+    height: 360px;
+    padding-top: rem(120);
+    padding-bottom: rem(120);
+    @include adaptiveValue('padding-top', 120, 70);
+    @include adaptiveValue('padding-bottom', 120, 82);
+    @media (max-width: $tablet) {
+        height: 235px;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__menu {
+        display: flex;
+        column-gap: rem(260);
+        @include adaptiveValue('column-gap', 260, 42);
+    }
+    &__item {
+
+        &:not(:last-child){
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__link {
+        color: $whiteColor;
+		text-align: center;
+		font-size: rem(18);
+		font-weight: 400;
+		line-height: math.div(27, 18);
+		text-transform: uppercase;
+		position: relative;
+		transition: all 0.2s ease 0s;
+        @include adaptiveValue('font-size', 18, 14);
+        @media (any-hover: hover) {
+			&:hover {
+				font-weight: 700;
+			}
+        }
+    }
+
+    &__actions .footer__item{
+        text-align: right;
+    }
+}
 
 //====================================================================================================
